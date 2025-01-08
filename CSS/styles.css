@@ -30,3 +30,15 @@ button {
     gap: 10px; 
     margin: 10px;
 }
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    width: 100%;
+     
+    position: relative;
+    bottom: 0;
+    left: 0;
+}
