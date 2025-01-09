@@ -1,44 +1,44 @@
 body {
-    background-color: #a9a9a9;
+  background-color: #a9a9a9;
 }
 
 #timer {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #timeDisplay {
-    font-size: 15rem; 
-    font-weight: bold;
-    margin-bottom: 20px;
+  font-size: 15rem;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 button {
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    border: none;
-    background-color: white;
-    color: black;
-    border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border: none;
+  /* background-color: white;
+  color: black; */
+  /* border-radius: 5px; */
 }
 .buttons {
-    display: flex;
-    gap: 10px; 
-    margin: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px;
 }
 
 footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    width: 100%;
-     
-    position: relative;
-    bottom: 0;
-    left: 0;
+  text-align: center;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+  width: 100%;
+
+  position: relative;
+  bottom: 0;
+  left: 0;
 }
