@@ -5,9 +5,8 @@ This Stopwatch/Timer project lets users track time easily. It includes a stopwat
 
 ## Table of Contents
 - [Installation](#installation)
-- [Usage](#usage)
 - [Features](#features)
-- [Contributing](#contributing)
+- [Contributers](#contributers)
 - [License](#license)
 
 ## Installation
@@ -24,12 +23,16 @@ This Stopwatch/Timer project lets users track time easily. It includes a stopwat
    npm install
    ```
 
+## Features
+   *****Work in Progress
+
+## Contributers
+Jat Bhatt, Maya Li Bauer, Lindsey Vigessa, Gage Degerness
+
+
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## Contributers
-
-Jat Bhatt, Maya Li Bauer, Lindsey Vigessa, Gage Degerness
 
 
 ### What is the major concept for the application?
