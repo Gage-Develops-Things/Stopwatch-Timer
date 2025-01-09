@@ -2,6 +2,24 @@ body {
   background-color: #a9a9a9;
 }
 
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+  width: 100%;
+
+  position: relative;
+  bottom: 0;
+  left: 0;
+}
+
+#toggle {
+  width: 7rem;
+  height: 2rem;
+  border-radius: 3rem;
+}
+
 #timer {
   text-align: center;
   display: flex;
@@ -24,23 +42,19 @@ body {
   color: black;
   border-radius: 5px;
 } */
+
+.headerFlexContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .buttons {
   display: flex;
   justify-content: center;
   gap: 10px;
   margin: 10px;
-}
-
-footer {
-  text-align: center;
-  padding: 10px;
-  background-color: #333;
-  color: white;
-  width: 100%;
-
-  position: relative;
-  bottom: 0;
-  left: 0;
 }
 
 .btn {
