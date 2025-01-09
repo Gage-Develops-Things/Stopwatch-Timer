@@ -1,7 +1,55 @@
-# Stopwatch
+# ChronoByte
 
-### What is the application called?
-  ChronoByte
+## Description
+This Stopwatch/Timer project lets users track time easily. It includes a stopwatch to measure elapsed time and a timer to count down from a set duration. 
+
+## Table of Contents
+- [Installation](#installation)
+- [Features](#features)
+- [Contributers](#contributers)
+- [License](#license)
+
+## Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/mbauer99621/Stopwatch-Timer
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd Stopwatch-Timer
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+## Features
+   *****Work in Progress
+
+## Contributers
+Jat Bhatt, Maya Li Bauer, Lindsey Vigessa, Gage Degerness
+
+
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Below is for Contributer Reference
+
+
 ### What is the major concept for the application?
   Acts as a stopwatch so user can time themselves performing different tasks.
 ### Give at least one user story.
