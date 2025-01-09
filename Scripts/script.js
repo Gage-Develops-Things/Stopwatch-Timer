@@ -1,7 +1,10 @@
-const time = document.querySelector('#timeDisplay')
-const startButton = document.querySelector('#startButton')
-const resetButton = document.querySelector('#resetButton')
-const stopwatch = { elapsedTime: 0 }
+const time = document.querySelector('#timeDisplay');
+const startButton = document.querySelector('#startButton');
+const resetButton = document.querySelector('#resetButton');
+const lapButton = document.querySelector("#lapButton");
+const timerSection = document.querySelector("#timer");
+const lapDiv = document.querySelector("#lapDiv");
+const stopwatch = { elapsedTime: 0 };
 
 startButton.addEventListener('click', () => {
   if (startButton.innerHTML === 'Start') {
@@ -21,18 +24,18 @@ resetButton.addEventListener('click', () => {
 })
 
 function startStopwatch() {
-  //reset start time
+
   stopwatch.startTime = Date.now();
-  //run `setInterval()` and save id
+
   stopwatch.intervalId = setInterval(() => {
-    //calculate elapsed time
+
     const elapsedTime = Date.now() - stopwatch.startTime + stopwatch.elapsedTime
-    //calculate different time measurements based on elapsed time
+
     const milliseconds = parseInt((elapsedTime%1000)/10)
     const seconds = parseInt((elapsedTime/1000)%60)
     const minutes = parseInt((elapsedTime/(1000*60))%60)
     const hour = parseInt((elapsedTime/(1000*60*60))%24);
-    //display time
+
     displayTime(hour, minutes, seconds, milliseconds)
   }, 100);
 }
@@ -42,35 +45,24 @@ function displayTime(hour, minutes, seconds, milliseconds) {
   time.innerHTML = leadZeroTime.join(':')
 }
 
+lapButton.addEventListener("click", function(){
+  lapTime();
+})
 
+  // create lap array
+let lapArray = [];
 
-
-// below Doesnt work
-// startButton.addEventListener("click", function() {
-// 	if (isRunning) {
-// 	clearInterval(timerInterval);
-// 	startButton.textContent = "Start";
-//  } else {
-// 	timerInterval = setInterval(function() {
-// 	time++;
-// 	timeDisplay.textContent = formatTime(time);
-//  	}, 1000);
-// 	startButton.textContent = "Stop";
-// 	}
-// 	isRunning = !isRunning;
-// });
-
-// BELOW DOESNT WORK.  WEIRD INBETWEEN SECONDS. TOO SLOW/FAST
-// let totalMiliSeconds = 0
-// startButton.addEventListener("click", function(){
-//   setInterval(() => {
-//     totalMiliSeconds += 1;
-//     timeDisplay.innerHTML = totalMiliSeconds;
-//   }, 1)
-
-//   })
-
-
-resetButton.addEventListener("click", function(){
-timeDisplay.textContent = "00.00.00.00";
-});
+// reset button clears the lap time as well
+function lapTime(){
+  // create lap paragraph element
+  const lapP = document.createElement("p")
+  // append child to lapDiv section
+  lapDiv.appendChild(lapP);
+  // push content to lap paragraph
+  lapP.textContent = time.textContent;
+  // populate lap array with laps
+  lapArray.push(lapP.textContent)
+  // stringify lap array and send array to local storage
+  JSON.stringify(lapArray);
+  localStorage.setItem("laps", lapArray);
+}
