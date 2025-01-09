@@ -2,6 +2,24 @@ body {
   background-color: #a9a9a9;
 }
 
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+  width: 100%;
+
+  position: relative;
+  bottom: 0;
+  left: 0;
+}
+
+#toggle {
+  width: 7rem;
+  height: 2rem;
+  border-radius: 3rem;
+}
+
 #timer {
   text-align: center;
   display: flex;
@@ -15,6 +33,13 @@ body {
   margin-bottom: 20px;
 }
 
+.headerFlexContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .buttons {
   display: flex;
   justify-content: center;
@@ -24,40 +49,40 @@ body {
 
 /* Light mode styles */
 body.light-mode {
-    background-color: #3d3c3c;
-    color: #000000;
+  background-color: #3d3c3c;
+  color: #000000;
 }
 
 body.light-mode button {
-    border-color: #000000;
-    color: #ffffff;
+  border-color: #000000;
+  color: #ffffff;
 }
 
 /* Dark mode styles */
 body.dark-mode {
-    background-color: #343a40;
-    color: #ffffff;
+  background-color: #343a40;
+  color: #ffffff;
 }
 
 body.dark-mode button {
-    border-color: #444444;
-    color: #ffffff;
+  border-color: #444444;
+  color: #ffffff;
 }
 
 /* Default background */
 body.default-mode {
-    background-color: #f0f0f0;
-    color: #333;
+  background-color: #f0f0f0;
+  color: #333;
 }
 
 /* Unicorn mode background */
 body.unicorn-mode {
-    background-color: #ff99ff;
-    background-image: url('https://www.bing.com/ck/a?!&&p=3a766ca95f671cc74cc9abace23de555bd43f5d024c747cc950ec38c60c736a1JmltdHM9MTczNjM4MDgwMA&ptn=3&ver=2&hsh=4&fclid=2e331fca-1818-6588-1ca7-0a9219776483&u=a1L2ltYWdlcy9zZWFyY2g_cT1qcGVnK3VuaWNvcm4raW1hZ2VzJmlkPTk2NTczNjZGNDZGNUZCNDc3QTE3OTM5MTExNjhGOEZGNjg1NUFEMUMmRk9STT1JUUZSQkE&ntb=1');
-    background-size: cover; 
-    background-position: center;
-    background-repeat: no-repeat;
-    color: #ffffff;
+  background-color: #ff99ff;
+  background-image: url("https://www.bing.com/ck/a?!&&p=3a766ca95f671cc74cc9abace23de555bd43f5d024c747cc950ec38c60c736a1JmltdHM9MTczNjM4MDgwMA&ptn=3&ver=2&hsh=4&fclid=2e331fca-1818-6588-1ca7-0a9219776483&u=a1L2ltYWdlcy9zZWFyY2g_cT1qcGVnK3VuaWNvcm4raW1hZ2VzJmlkPTk2NTczNjZGNDZGNUZCNDc3QTE3OTM5MTExNjhGOEZGNjg1NUFEMUMmRk9STT1JUUZSQkE&ntb=1");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #ffffff;
 }
 
 footer {
