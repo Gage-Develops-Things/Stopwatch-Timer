@@ -35,6 +35,21 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+##Below is for Contributer Reference
+
+
 ### What is the major concept for the application?
   Acts as a stopwatch so user can time themselves performing different tasks.
 ### Give at least one user story.
