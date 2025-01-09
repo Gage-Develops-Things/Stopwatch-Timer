@@ -1,20 +1,20 @@
-const time = document.querySelector('.stopwatch')
-const mainButton = document.querySelector('#main-button')
-const clearButton = document.querySelector('#clear-button')
+const time = document.querySelector('#timeDisplay')
+const startButton = document.querySelector('#startButton')
+const resetButton = document.querySelector('#resetButton')
 const stopwatch = { elapsedTime: 0 }
 
-mainButton.addEventListener('click', () => {
-  if (mainButton.innerHTML === 'Start') {
+startButton.addEventListener('click', () => {
+  if (startButton.innerHTML === 'Start') {
     startStopwatch();
-    mainButton.innerHTML = 'Stop'
+    startButton.innerHTML = 'Stop'
   } else {
     stopwatch.elapsedTime += Date.now() - stopwatch.startTime
     clearInterval(stopwatch.intervalId)
-    mainButton.innerHTML = 'Start'
+    startButton.innerHTML = 'Start'
   }
 })
 
-clearButton.addEventListener('click', () => {
+resetButton.addEventListener('click', () => {
   stopwatch.elapsedTime = 0
   stopwatch.startTime = Date.now()
   displayTime(0, 0, 0, 0)
