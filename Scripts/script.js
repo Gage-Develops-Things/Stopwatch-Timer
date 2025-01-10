@@ -1,3 +1,5 @@
+//Script.js
+
 const time = document.querySelector('#timeDisplay');
 const startButton = document.querySelector('#startButton');
 const resetButton = document.querySelector('#resetButton');
@@ -66,3 +68,31 @@ function lapTime(){
   JSON.stringify(lapArray);
   localStorage.setItem("laps", lapArray);
 }
+
+
+//--------MODAL--------
+const toggleButton = document.querySelector('#toggle');
+const unicornModal = document.querySelector('#unicornModal');
+const closeModalButton = document.querySelector('#closeModal');
+
+toggleButton.addEventListener('click', () => {
+  // Toggle Unicorn Mode on the body element
+  document.body.classList.toggle('unicorn-mode');
+  
+  // Show the modal when Unicorn Mode is activated
+  unicornModal.style.display = 'flex'; // Show the modal
+});
+
+// Close the modal when the close button is clicked
+closeModalButton.addEventListener('click', () => {
+  unicornModal.style.display = 'none'; // Hide the modal
+});
+
+// Close the modal if the user clicks outside of it
+window.addEventListener('click', (event) => {
+  if (event.target === unicornModal) {
+    unicornModal.style.display = 'none'; // Hide the modal if clicked outside
+  }
+});
+
+
