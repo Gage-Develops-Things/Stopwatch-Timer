@@ -1,25 +1,39 @@
 /*Styles.css*/
 
+html {
+  font-size: 62.5%;
+}
+
 body {
   background-color: #a9a9a9;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  margin-left: 1rem;
 }
 
 footer {
   text-align: center;
-  padding: 10px;
-  background-color: #333;
-  color: white;
+  padding: 2rem;
+  background-color: #464646;
+  color: #ffffff;
   width: 100%;
-
-  position: relative;
-  bottom: 0;
+  position: fixed;
   left: 0;
+  bottom: 0;
+}
+
+h1 {
+  font-size: 4rem;
 }
 
 #toggle {
-  width: 7rem;
-  height: 2rem;
+  width: 12rem;
+  height: 3rem;
   border-radius: 3rem;
+  font-size: 1.5rem;
 }
 
 #timer {
@@ -30,9 +44,23 @@ footer {
 }
 
 #timeDisplay {
-  font-size: 15rem;
+  font-size: 15vw;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
+}
+
+#startButton,
+#resetButton,
+#lapButton {
+  height: 6rem;
+  width: 30rem;
+  margin: 1rem;
+  font-size: 3rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .headerFlexContainer {
@@ -45,8 +73,8 @@ footer {
 .buttons {
   display: flex;
   justify-content: center;
-  gap: 10px;
-  margin: 10px;
+  gap: 1rem;
+  margin: 1rem;
 }
 /* Default background */
 body.default-mode {
@@ -64,46 +92,6 @@ body.unicorn-mode {
   color: #ffffff;
 }
 
-footer {
-  text-align: center;
-  padding: 10px;
-  background-color: #333;
-  color: white;
-  width: 100%;
-
-  position: relative;
-  bottom: 0;
-  left: 0;
-}
-.btn {
-  height: 5rem;
-  width: 20rem;
-  margin: 1rem;
-  font-size: 10rem;
-  font-weight: bold;
-  display: flex; 
-  justify-content: center; 
-  align-items: center;  
-  text-align: center;   
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Modal Styles */
 .modal {
   display: none; /* Hidden by default */
@@ -116,19 +104,19 @@ footer {
   background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 2rem;
 }
 
 .modal-content {
   background-color: #ff99ff; /* Pink background */
-  color: white;
-  padding: 40px; /* Adjusted padding */
+  color: #ffffff;
+  padding: 4rem; /* Adjusted padding */
   border-radius: 10px;
   text-align: center;
   font-size: 1.5rem;
   position: relative;
   width: 90%;
-  max-width: 700px;
+  max-width: 70rem;
   height: 85%;
   display: flex;
   flex-direction: column; /* Allows stacking text and animation */
@@ -137,18 +125,15 @@ footer {
   overflow: hidden; /* Prevent rainbow from spilling outside */
 }
 
-
 .modal-header {
   font-size: 3rem; /* Increased text size */
   margin-bottom: -70vh; /* Adds space between the text and the rainbow */
 }
 
-
-
 .close-btn {
   position: absolute;
-  top: 10px;
-  right: 30px;
+  top: 1rem;
+  right: 3rem;
   font-size: 4rem;
   cursor: pointer;
 }
