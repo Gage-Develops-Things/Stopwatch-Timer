@@ -106,12 +106,13 @@ body.default-mode {
 }
 
 /* Unicorn mode background */
-body.unicorn-mode {
+body.unicorn-mode.bg-secondary {
   background-color: #ff99ff;
-  background-image: url("./assets/unicorn2.png");
+  background-image: url("../assets/fantasy-unicorn-with-digital-art-style.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   color: #ffffff;
 }
 
