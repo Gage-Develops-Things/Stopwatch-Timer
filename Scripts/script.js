@@ -4,55 +4,69 @@ const resetButton = document.querySelector('#resetButton');
 const lapButton = document.querySelector("#lapButton");
 const timerSection = document.querySelector("#timer");
 const lapDiv = document.querySelector("#lapDiv");
-const stopwatch = { elapsedTime: 0 };
 
-startButton.addEventListener('click', () => {
-  if (startButton.innerHTML === 'Start') {
-    startStopwatch();
-    startButton.innerHTML = 'Stop'
-  } else {
-    stopwatch.elapsedTime += Date.now() - stopwatch.startTime
-    clearInterval(stopwatch.intervalId)
-    startButton.innerHTML = 'Start'
-  }
-})
+// my button for the event listener
 
-resetButton.addEventListener('click', () => {
-  stopwatch.elapsedTime = 0
-  stopwatch.startTime = Date.now()
-  displayTime(0, 0, 0, 0)
-})
+const numberOfButtons = document.querySelectorAll("button").length;
 
-function startStopwatch() {
+for (let i=0; i<numberOfButtons; i++){
+  document.querySelectorAll("button")[i].addEventListener("click", function(){
+    const sparkleSound = new Audio("../sparkle.mp3")
+    sparkleSound.play();
+  });
+};
 
-  stopwatch.startTime = Date.now();
-
-  stopwatch.intervalId = setInterval(() => {
-
-    const elapsedTime = Date.now() - stopwatch.startTime + stopwatch.elapsedTime
-
-    const milliseconds = parseInt((elapsedTime%1000)/10)
-    const seconds = parseInt((elapsedTime/1000)%60)
-    const minutes = parseInt((elapsedTime/(1000*60))%60)
-    const hour = parseInt((elapsedTime/(1000*60*60))%24);
-
-    displayTime(hour, minutes, seconds, milliseconds)
-  }, 100);
-}
-
-function displayTime(hour, minutes, seconds, milliseconds) {
-  const leadZeroTime = [hour, minutes, seconds, milliseconds].map(time => time < 10 ? `0${time}` : time)
-  time.innerHTML = leadZeroTime.join(':')
-}
-
-lapButton.addEventListener("click", function(){
-  lapTime();
-})
-
-  // create lap array
+let startTime;
+let updatedTime;
+let difference = 0;
+let tInterval;
+let running = false;
 let lapArray = [];
 
-// reset button clears the lap time as well
+function startTimer() {
+  // if its not running, then start the stopwatch. Use Date.now() to return accurate time as set interval does not.
+    if (!running) {
+        startTime = Date.now() - difference;
+        tInterval = setInterval(updateTime, 10);
+        running = true;
+        startButton.textContent = "Stop";
+        console.log("click")
+    }
+    else {
+      clearInterval(tInterval);
+      running = false;
+      startButton.textContent = "Start";
+    }
+};
+
+
+
+function resetTimer() {
+    clearInterval(tInterval);
+    running = false;
+    difference = 0;
+    time.innerHTML = "00:00:00:00";
+    startButton.innerHTML = "Start";
+    lapArray = [];
+    lapDiv.textContent = "";
+    localStorage.setItem("laps", "")
+};
+
+function updateTime() {
+    updatedTime = Date.now();
+    difference = updatedTime - startTime;
+
+    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+    const deciseconds = Math.floor((difference % 1000) / 100)
+
+    time.innerHTML = (hours < 10 ? "0" + hours : hours) + ":" + 
+                     (minutes < 10 ? "0" + minutes : minutes) + ":" + 
+                     (seconds < 10 ? "0" + seconds : seconds) + ":" +
+                     (deciseconds < 10 ? "0" + deciseconds : deciseconds);
+};
+
 function lapTime(){
   // create lap paragraph element
   const lapP = document.createElement("p")
@@ -66,3 +80,8 @@ function lapTime(){
   JSON.stringify(lapArray);
   localStorage.setItem("laps", lapArray);
 }
+
+// Event listeners
+startButton.addEventListener('click', startTimer);
+resetButton.addEventListener('click', resetTimer);
+lapButton.addEventListener("click", lapTime);
