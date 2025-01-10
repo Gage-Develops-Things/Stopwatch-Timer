@@ -75,13 +75,20 @@ const toggleButton = document.querySelector('#toggle');
 const unicornModal = document.querySelector('#unicornModal');
 const closeModalButton = document.querySelector('#closeModal');
 
+
+
 toggleButton.addEventListener('click', () => {
   // Toggle Unicorn Mode on the body element
   document.body.classList.toggle('unicorn-mode');
-  
-  // Show the modal when Unicorn Mode is activated
-  unicornModal.style.display = 'flex'; // Show the modal
+  getUnicornToggle = document.getElementsByClassName('unicorn-mode');
+  let isUnicornMode = document.body.classList.contains("unicorn-mode");
+
+  if (isUnicornMode) {
+    console.log(document.body.classList.contains("unicorn-mode"));
+    unicornModal.style.display = 'flex';
+  } 
 });
+
 
 // Close the modal when the close button is clicked
 closeModalButton.addEventListener('click', () => {
@@ -94,5 +101,3 @@ window.addEventListener('click', (event) => {
     unicornModal.style.display = 'none'; // Hide the modal if clicked outside
   }
 });
-
-
