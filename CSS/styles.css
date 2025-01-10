@@ -62,7 +62,9 @@ h1.spread:hover {
 
 #startButton,
 #resetButton,
-#lapButton {
+#lapButton,
+#goButton,
+#clearButton {
   height: 6rem;
   width: 30rem;
   margin: 1rem;
@@ -243,5 +245,3 @@ body.unicorn-mode.bg-secondary {
   top: calc(50% + 3.12em);
   border-radius: 0 0 6.25em 6.25em;
 }
-
-
