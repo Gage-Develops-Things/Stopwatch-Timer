@@ -80,7 +80,7 @@ body.default-mode {
 /* Unicorn mode background */
 body.unicorn-mode {
   background-color: #ff99ff;
-  background-image: url("https://www.bing.com/ck/a?!&&p=3a766ca95f671cc74cc9abace23de555bd43f5d024c747cc950ec38c60c736a1JmltdHM9MTczNjM4MDgwMA&ptn=3&ver=2&hsh=4&fclid=2e331fca-1818-6588-1ca7-0a9219776483&u=a1L2ltYWdlcy9zZWFyY2g_cT1qcGVnK3VuaWNvcm4raW1hZ2VzJmlkPTk2NTczNjZGNDZGNUZCNDc3QTE3OTM5MTExNjhGOEZGNjg1NUFEMUMmRk9STT1JUUZSQkE&ntb=1");
+  background-image: url("./assets/unicorn2.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -98,11 +98,16 @@ footer {
   bottom: 0;
   left: 0;
 }
-
 .btn {
   height: 5rem;
   width: 20rem;
   margin: 1rem;
+  font-size: 10rem;
+  font-weight: bold;
+  display: flex; 
+  justify-content: center; 
+  align-items: center;  
+  text-align: center;   
 }
 
 
