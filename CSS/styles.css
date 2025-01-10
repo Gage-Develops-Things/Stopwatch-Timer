@@ -1,3 +1,5 @@
+/*Styles.css*/
+
 body {
   background-color: #a9a9a9;
 }
@@ -109,15 +111,161 @@ footer {
 }
 
 
-  @media (max-width: 768px) {
-    .btn {
-      font-size: 1.5rem;
-    }
-  }
-  
-  @media (min-width: 769px) {
-    .btn {
-      font-size: 2.5rem;
-    }
-  }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Modal Styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.modal-content {
+  background-color: #ff99ff; /* Pink background */
+  color: white;
+  padding: 40px; /* Adjusted padding */
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1.5rem;
+  position: relative;
+  width: 90%;
+  max-width: 700px;
+  height: 85%;
+  display: flex;
+  flex-direction: column; /* Allows stacking text and animation */
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Prevent rainbow from spilling outside */
+}
+
+
+.modal-header {
+  font-size: 3rem; /* Increased text size */
+  margin-bottom: -70vh; /* Adds space between the text and the rainbow */
+}
+
+
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  font-size: 4rem;
+  cursor: pointer;
+}
+
+/* Rainbow animation */
+.container {
+  height: 34em;
+  width: 34em;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  border-radius: 0.6em;
+  box-shadow: 0 1.5em 3.5em rgba(32, 47, 80, 0.2);
+}
+
+.container:after {
+  content: "";
+  position: absolute;
+  height: 50.5%;
+  width: 100%;
+
+  bottom: 0;
+  border-radius: 0 0 0.6em 0.6em;
+}
+
+.rainbow-color {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  animation: spin 5s infinite;
+  transform-origin: 50% 0;
+}
+
+@keyframes spin {
+  30% {
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+  55% {
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+  85% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.rainbow-color-1 {
+  height: 11.25em;
+  width: 22.5em;
+  border: 1.25em solid #fd004c;
+  border-top: none;
+  top: calc(50% + 5.62em);
+  border-radius: 0 0 11.25em 11.25em;
+  animation-delay: 0.8s;
+}
+
+.rainbow-color-2 {
+  height: 10em;
+  width: 20em;
+  border: 1.25em solid #fe9000;
+  border-top: none;
+  top: calc(50% + 5em);
+  border-radius: 0 0 10em 10em;
+  animation-delay: 0.6s;
+}
+
+.rainbow-color-3 {
+  height: 8.75em;
+  width: 17.5em;
+  border: 1.25em solid #fff020;
+  border-top: none;
+  top: calc(50% + 4.37em);
+  border-radius: 0 0 8.75em 8.75em;
+  animation-delay: 0.4s;
+}
+
+.rainbow-color-4 {
+  height: 7.5em;
+  width: 15em;
+  border: 1.25em solid #3edf4b;
+  border-top: none;
+  top: calc(50% + 3.75em);
+  border-radius: 0 0 7.5em 7.5em;
+  animation-delay: 0.2s;
+}
+
+.rainbow-color-5 {
+  height: 6.25em;
+  width: 12.5em;
+  border: 1.25em solid #3363ff;
+  border-top: none;
+  top: calc(50% + 3.12em);
+  border-radius: 0 0 6.25em 6.25em;
+}
