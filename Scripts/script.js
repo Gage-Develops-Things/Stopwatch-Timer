@@ -13,7 +13,7 @@ const numberOfButtons = document.querySelectorAll("button").length;
 
 for (let i=0; i<numberOfButtons; i++){
   document.querySelectorAll("button")[i].addEventListener("click", function(){
-    const sparkleSound = new Audio("../sparkle.mp3")
+    const sparkleSound = new Audio("./assets/sparkle.mp3")
     sparkleSound.play();
   });
 };
@@ -41,8 +41,6 @@ function startTimer() {
     }
 };
 
-
-
 function resetTimer() {
     clearInterval(tInterval);
     running = false;
@@ -56,6 +54,7 @@ function resetTimer() {
 
 function updateTime() {
     updatedTime = Date.now();
+    console.log(updatedTime);
     difference = updatedTime - startTime;
 
     const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
