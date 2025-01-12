@@ -34,7 +34,6 @@ function startTimer() {
         tInterval = setInterval(updateTime, 10);
         running = true;
         startButton.textContent = "Stop";
-        console.log("click")
     }
     else {
       clearInterval(tInterval);
@@ -42,8 +41,6 @@ function startTimer() {
       startButton.textContent = "Start";
     }
 };
-
-
 
 function resetTimer() {
     clearInterval(tInterval);
@@ -63,12 +60,12 @@ function updateTime() {
     const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-    const deciseconds = Math.floor((difference % 1000) / 100)
+    const deciseconds = Math.floor((difference % 1000) / 10)
 
     time.innerHTML = (hours < 10 ? "0" + hours : hours) + ":" + 
                      (minutes < 10 ? "0" + minutes : minutes) + ":" + 
                      (seconds < 10 ? "0" + seconds : seconds) + ":" +
-                     (deciseconds < 10 ? "0" + deciseconds : deciseconds);
+                     (deciseconds);
 };
 
 function lapTime(){
@@ -107,9 +104,9 @@ toggleButton.addEventListener('click', () => {
 
 
 // Close the modal when the close button is clicked
-closeModalButton.addEventListener('click', () => {
+ closeModalButton.addEventListener('click', () => {
   unicornModal.style.display = 'none'; // Hide the modal
-});
+  });
 
 // Close the modal if the user clicks outside of it
 window.addEventListener('click', (event) => {
@@ -118,7 +115,7 @@ window.addEventListener('click', (event) => {
   }
 });
 
-// Event listeners
-startButton.addEventListener('click', startTimer);
-resetButton.addEventListener('click', resetTimer);
-lapButton.addEventListener("click", lapTime);
+ //Event listeners
+ startButton.addEventListener('click', startTimer);
+ resetButton.addEventListener('click', resetTimer);
+ lapButton.addEventListener("click", lapTime);
