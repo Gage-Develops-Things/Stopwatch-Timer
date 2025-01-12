@@ -8,6 +8,10 @@ body {
   background-color: #a9a9a9;
   color: #ffffff;
   font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  margin-bottom: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
@@ -22,13 +26,10 @@ main {
 footer {
   font-size: 1.5rem;
   text-align: center;
-  padding: 2rem;
   background-color: #464646;
   color: #ffffff;
-  width: 100%;
-  position: fixed;
-  left: 0;
-  bottom: 0;
+  padding: 2rem;
+  margin-top: auto;
 }
 
 h1 {
@@ -114,6 +115,10 @@ h1.spread:hover {
   margin: 1rem;
   flex-wrap: wrap;
 }
+
+/* Need to select hero class and set margin to auto to properly center
+   content vertically */
+
 /* Default background */
 body.default-mode {
   background-color: #f0f0f0;
@@ -132,9 +137,8 @@ body.unicorn-mode.bg-secondary {
 }
 
 body.unicorn-mode {
-  cursor: url('../Assets/cursor.png') 16 16, auto;
+  cursor: url("../Assets/cursor.png") 16 16, auto;
 }
-
 
 /* Modal Styles */
 .modal {
