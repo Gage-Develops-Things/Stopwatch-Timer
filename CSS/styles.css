@@ -21,15 +21,10 @@ header {
 
 footer {
   text-align: center;
-
   background-color: #464646;
   color: #ffffff;
   padding: 2rem;
   margin-top: auto;
-  /* width: 100%;
-  position: fixed;
-  left: 0;
-  bottom: 0; */
 }
 
 h1 {
@@ -93,6 +88,10 @@ h1.spread:hover {
   gap: 1rem;
   margin: 1rem;
 }
+
+/* Need to select hero class and set margin to auto to properly center
+   content vertically */
+
 /* Default background */
 body.default-mode {
   background-color: #f0f0f0;
