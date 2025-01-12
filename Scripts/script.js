@@ -11,12 +11,14 @@ const lapDiv = document.querySelector("#lapDiv");
 
 const numberOfButtons = document.querySelectorAll("button").length;
 
-for (let i=0; i<numberOfButtons; i++){
-  document.querySelectorAll("button")[i].addEventListener("click", function(){
-    const sparkleSound = new Audio("./assets/sparkle.mp3")
-    sparkleSound.play();
+for (let i = 0; i < numberOfButtons; i++) {
+  document.querySelectorAll("button")[i].addEventListener("click", function () {
+    if (document.body.classList.contains("unicorn-mode")) {
+      const sparkleSound = new Audio("./assets/sparkle.mp3");
+      sparkleSound.play();
+    }
   });
-};
+}
 
 let startTime;
 let updatedTime;
