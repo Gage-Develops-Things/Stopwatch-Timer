@@ -8,6 +8,10 @@ body {
   background-color: #a9a9a9;
   color: #ffffff;
   font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  margin-bottom: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
@@ -17,13 +21,15 @@ header {
 
 footer {
   text-align: center;
-  padding: 2rem;
+
   background-color: #464646;
   color: #ffffff;
-  width: 100%;
+  padding: 2rem;
+  margin-top: auto;
+  /* width: 100%;
   position: fixed;
   left: 0;
-  bottom: 0;
+  bottom: 0; */
 }
 
 h1 {
@@ -105,9 +111,8 @@ body.unicorn-mode.bg-secondary {
 }
 
 body.unicorn-mode {
-  cursor: url('../Assets/cursor.png') 16 16, auto;
+  cursor: url("../Assets/cursor.png") 16 16, auto;
 }
-
 
 /* Modal Styles */
 .modal {
@@ -248,5 +253,3 @@ body.unicorn-mode {
   top: calc(50% + 3.12em);
   border-radius: 0 0 6.25em 6.25em;
 }
-
-
