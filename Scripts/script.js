@@ -51,6 +51,7 @@ function resetTimer() {
     lapArray = [];
     lapDiv.textContent = "";
     localStorage.setItem("laps", "")
+    lapDiv.setAttribute("style", "display:none;");
 };
 
 function updateTime() {
@@ -73,6 +74,7 @@ function lapTime(){
   const lapP = document.createElement("p")
   // append child to lapDiv section
   lapDiv.appendChild(lapP);
+  lapDiv.setAttribute("style", "display:block");
   // push content to lap paragraph
   lapP.textContent = time.textContent;
   // populate lap array with laps
