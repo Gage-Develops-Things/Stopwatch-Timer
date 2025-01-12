@@ -93,6 +93,8 @@ const closeModalButton = document.querySelector('#closeModal');
 
 
 toggleButton.addEventListener('click', () => {
+  const sparkle = new Audio("./assets/sparkle.mp3");
+  sparkle.play();
   // Toggle Unicorn Mode on the body element
   document.body.classList.toggle('unicorn-mode');
   getUnicornToggle = document.getElementsByClassName('unicorn-mode');
@@ -113,7 +115,7 @@ toggleButton.addEventListener('click', () => {
 // Close the modal if the user clicks outside of it
 window.addEventListener('click', (event) => {
   if (event.target === unicornModal) {
-    unicornModal.style.display = 'none'; // Hide the modal if clicked outside
+    unicornModal.style.display = 'none'; 
   }
 });
 
@@ -121,3 +123,6 @@ window.addEventListener('click', (event) => {
  startButton.addEventListener('click', startTimer);
  resetButton.addEventListener('click', resetTimer);
  lapButton.addEventListener("click", lapTime);
+
+
+ 
