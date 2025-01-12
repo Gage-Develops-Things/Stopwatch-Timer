@@ -15,7 +15,12 @@ header {
   margin-right: 2rem;
 }
 
+main {
+  padding-top: 15rem;
+}
+
 footer {
+  font-size: 1.5rem;
   text-align: center;
   padding: 2rem;
   background-color: #464646;
@@ -37,21 +42,16 @@ h1.spread {
 }
 
 h1.spread:hover {
-  letter-spacing: 0.2em;
+  letter-spacing: 0.1em;
 }
 
-#toggle {
+#toggle,
+#stopwatchButton,
+#timerButton {
   width: 12rem;
   height: 3rem;
   border-radius: 3rem;
   font-size: 1.5rem;
-}
-
-#timer {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 #timeDisplay {
@@ -62,7 +62,9 @@ h1.spread:hover {
 
 #startButton,
 #resetButton,
-#lapButton {
+#lapButton,
+#goButton,
+#clearButton {
   height: 6rem;
   width: 30rem;
   margin: 1rem;
@@ -73,12 +75,36 @@ h1.spread:hover {
   align-items: center;
   text-align: center;
 }
+/* Need to show the <div> in JS once the lap button is pressed
+   I also placed the <div> inside of the .buttons <div> */
+#lapDiv {
+  display: none;
+  font-size: x-large;
+  width: 30rem;
+  max-width: 80rem;
+  margin: auto;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 3rem;
+  outline: 0.1rem solid #ffffff;
+}
 
-.headerFlexContainer {
+.hero {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.headerContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+}
+.navContainer {
+  display: flex;
+  gap: 1rem;
 }
 
 .buttons {
@@ -86,6 +112,7 @@ h1.spread:hover {
   justify-content: center;
   gap: 1rem;
   margin: 1rem;
+  flex-wrap: wrap;
 }
 /* Default background */
 body.default-mode {
@@ -248,5 +275,3 @@ body.unicorn-mode {
   top: calc(50% + 3.12em);
   border-radius: 0 0 6.25em 6.25em;
 }
-
-

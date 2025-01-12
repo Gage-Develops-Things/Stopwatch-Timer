@@ -13,48 +13,63 @@
     />
     <link rel="stylesheet" href="CSS/styles.css" />
   </head>
-  <body .bg-secondary>
+
+  <body class="bg-secondary">
     <header>
-      <div class="headerFlexContainer">
-        <h1>ChronoByte</h1>
-        <!-- <label for="toggle"> Unicorn Mode </label> -->
-        <button
-          type="button"
-          id="toggle"
-          class="btn btn-outline-secondary btn-sm"
-        >
-          Unicorn Mode
-        </button>
-        <!-- <input type="checkbox" id="toggle" /> -->
+      <div class="headerContainer">
+        <h1 class="spread">ChronoByte</h1>
+        <div class="navContainer">
+          <a href="index.html"
+            ><button
+              type="button"
+              id="stopwatchButton"
+              class="btn btn-outline-light btn-sm"
+            >
+              Stopwatch
+            </button></a
+          >
+          <a href="timer.html"
+            ><button
+              type="button"
+              id="timerButton"
+              class="btn btn-outline-light btn-sm"
+            >
+              Timer
+            </button></a
+          >
+          <button
+            type="button"
+            id="toggle"
+            class="btn btn-outline-light btn-sm"
+          >
+            Unicorn Mode
+          </button>
+        </div>
       </div>
     </header>
     <main>
-      <section id="timer">
-        <div class="container-fluid">
-          <div class="display">
-            <h2 id="timeDisplay">00:00:00:00</h2>
-          </div>
+      <section class="hero">
+        <div class="display">
+          <h2 id="timeDisplay">00:00:00:00</h2>
         </div>
-
-        <div class="container-fluid">
-          <div class="container-fluid buttons">
-            <button
-              type="button"
-              id="goButton"
-              class="btn btn-secondary btn-block btn-lg rounded-pill"
-            >Start</button>
-            <button
-              type="button"
-              id="clearButton"
-              class="btn btn-secondary btn-lg rounded-pill"
-            >Reset</button>
-          </div>
+        <div class="buttons">
+          <button
+            type="button"
+            id="goButton"
+            class="btn btn-secondary btn-block btn-lg rounded-pill"
+          >
+            Start
+          </button>
+          <button
+            type="button"
+            id="clearButton"
+            class="btn btn-secondary btn-lg rounded-pill"
+          >
+            Reset
+          </button>
         </div>
       </section>
-      <a href="index.html">Stopwatch</a>
-      <a href="timer.html">Timer</a>
     </main>
-
     <footer>&copy 2025 Gage, Lindsey, Jay, Maya Li</footer>
     <script src="./Scripts/script.js" type="text/javascript"></script>
     <script
