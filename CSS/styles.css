@@ -20,7 +20,7 @@ header {
 }
 
 main {
-  padding-top: 15rem;
+  margin: 2rem auto;
 }
 
 footer {
@@ -76,10 +76,9 @@ h1.spread:hover {
   align-items: center;
   text-align: center;
 }
-/* Need to show the <div> in JS once the lap button is pressed
-   I also placed the <div> inside of the .buttons <div> */
+
 #lapDiv {
-  display: none;
+  display: none; /* Hidden by default */
   font-size: x-large;
   width: 30rem;
   max-width: 80rem;
@@ -90,15 +89,9 @@ h1.spread:hover {
   outline: 0.1rem solid #ffffff;
 }
 
-.hero {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .headerContainer {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
@@ -108,6 +101,13 @@ h1.spread:hover {
   gap: 1rem;
 }
 
+.hero {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .buttons {
   display: flex;
   justify-content: center;
@@ -115,9 +115,6 @@ h1.spread:hover {
   margin: 1rem;
   flex-wrap: wrap;
 }
-
-/* Need to select hero class and set margin to auto to properly center
-   content vertically */
 
 /* Default background */
 body.default-mode {
@@ -278,4 +275,10 @@ body.unicorn-mode {
   border-top: none;
   top: calc(50% + 3.12em);
   border-radius: 0 0 6.25em 6.25em;
+}
+
+@media (max-width: 768px) {
+  .headerContainer {
+    justify-content: center;
+  }
 }
