@@ -95,8 +95,12 @@ function updateTime() {
 };
 
 //Lap Time Function
+
+// This creates the best lap, which will be populated later on.
+const rLap = document.createElement("p");
+rankedLaps.appendChild(rLap);
+
 function lapTime(){
-  // Began building structure for a lap div
   // Push difference (total time) each time a lap event occurs
   differenceArray.push(difference)
   // The eachLapArray is the length of each lap, derived from the difference array.
