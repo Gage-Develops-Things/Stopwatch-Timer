@@ -11,6 +11,8 @@ const lapDiv = document.querySelector("#lapDiv");
 
 const numberOfButtons = document.querySelectorAll("button").length;
 
+
+//Sparkle Sound for Unicorn Mode
 for (let i = 0; i < numberOfButtons; i++) {
   document.querySelectorAll("button")[i].addEventListener("click", function () {
     if (document.body.classList.contains("unicorn-mode")) {
@@ -19,7 +21,18 @@ for (let i = 0; i < numberOfButtons; i++) {
     }
   });
 }
+//Sparkle Sound for Space Mode
+for (let i = 0; i < numberOfButtons; i++) {
+  document.querySelectorAll("button")[i].addEventListener("click", function () {
+    if (document.body.classList.contains("space-mode")) {
+      const sparkleSound = new Audio("./Assets/space.mp3");
+      spaceSound.play();
+    }
+  });
+}
 
+
+//Timer 
 let startTime;
 let updatedTime;
 let difference = 0;
@@ -27,6 +40,7 @@ let tInterval;
 let running = false;
 let lapArray = [];
 
+//Start Timer Function
 function startTimer() {
   // if its not running, then start the stopwatch. Use Date.now() to return accurate time as set interval does not.
     if (!running) {
@@ -42,6 +56,7 @@ function startTimer() {
     }
 };
 
+//Reset Timer Function
 function resetTimer() {
     clearInterval(tInterval);
     running = false;
@@ -54,6 +69,7 @@ function resetTimer() {
     lapDiv.setAttribute("style", "display:none;");
 };
 
+//Update Time Function
 function updateTime() {
     updatedTime = Date.now();
     difference = updatedTime - startTime;
@@ -69,6 +85,7 @@ function updateTime() {
                      (deciseconds);
 };
 
+//Lap Time Function
 function lapTime(){
   // create lap paragraph element
   const lapP = document.createElement("p")
@@ -85,27 +102,14 @@ function lapTime(){
 }
 
 
-//--------MODAL--------
+
 const toggleButton = document.querySelector('#toggle');
+const spaceButton =  document.querySelector('#spaceButton');
+
+
+//--------MODAL--------
 const unicornModal = document.querySelector('#unicornModal');
 const closeModalButton = document.querySelector('#closeModal');
-
-
-
-toggleButton.addEventListener('click', () => {
-  const sparkle = new Audio("./assets/sparkle.mp3");
-  sparkle.play();
-  // Toggle Unicorn Mode on the body element
-  document.body.classList.toggle('unicorn-mode');
-  getUnicornToggle = document.getElementsByClassName('unicorn-mode');
-  let isUnicornMode = document.body.classList.contains("unicorn-mode");
-
-  if (isUnicornMode) {
-    console.log(document.body.classList.contains("unicorn-mode"));
-    unicornModal.style.display = 'flex';
-  } 
-});
-
 
 // Close the modal when the close button is clicked
  closeModalButton.addEventListener('click', () => {
@@ -119,12 +123,45 @@ window.addEventListener('click', (event) => {
   }
 });
 
- //Event listeners
+ //Event listeners for Buttons
  startButton.addEventListener('click', startTimer);
  resetButton.addEventListener('click', resetTimer);
  lapButton.addEventListener("click", lapTime);
 
+ //
+ toggleButton.addEventListener('click', () => {
+  const sparkle = new Audio("./assets/sparkle.mp3");
+  sparkle.play();
+  // Toggle Unicorn Mode on the body element
+  document.body.classList.toggle('unicorn-mode');
+  getUnicornToggle = document.getElementsByClassName('unicorn-mode');
+  let isUnicornMode = document.body.classList.contains("unicorn-mode");
 
+  //If in unicorn mode, we toggle space mode off
+  if (isUnicornMode) {
+    if(document.body.classList.contains('space-mode')) {
+      document.body.classList.toggle('space-mode');
+    }
+    console.log(document.body.classList.contains("unicorn-mode"));
+    unicornModal.style.display = 'flex';
+  } 
+});
  
+////---------------------------Space JS---------------------------
+ spaceButton.addEventListener('click', () => {
+  const spaceSound = new Audio("./assets/space.mp3");
+  spaceSound.play();
+  // Toggle Space Mode on the body element
+  document.body.classList.toggle('space-mode');
+  getUnicornToggle = document.getElementsByClassName('space-mode');
+  let isSpaceMode = document.body.classList.contains("space-mode");
+  //If in space mode, we toggle unicorn mode off
+  if (isSpaceMode) {
+    if(document.body.classList.contains('unicorn-mode')) {
+      document.body.classList.toggle('unicorn-mode');
+    }
+  } 
+});
 
- 
+
+

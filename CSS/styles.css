@@ -48,7 +48,8 @@ h1.spread:hover {
 
 #toggle,
 #stopwatchButton,
-#timerButton {
+#timerButton,
+#spaceButton {
   width: 12rem;
   height: 3rem;
   border-radius: 3rem;
@@ -150,6 +151,8 @@ body.unicorn-mode.bg-secondary {
 }
 
 /*Unicorn mode body*/
+
+/*Unicorn Cursor*/
 body.unicorn-mode {
   cursor: url("../Assets/cursor.png") 50 50, auto;
   font-family: "Comic Sans MS", cursive, sans-serif;
@@ -168,7 +171,6 @@ body.unicorn-mode #timeDisplay {
   -webkit-background-clip: text; 
   -webkit-text-stroke: 2px white;
   color: transparent;  
-  
 }
 
 body.unicorn-mode footer {
@@ -217,13 +219,21 @@ body.unicorn-mode #lapButton {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+body.unicorn-mode #spaceButton {
+  background-color: #ffd9b3;
+  background: linear-gradient(45deg, #ffd9b3, #ffe5cc); 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 /* Hover effects for the Unicorn Mode Buttons*/
 body.unicorn-mode #toggle:hover,
 body.unicorn-mode #stopwatchButton:hover,
 body.unicorn-mode #timerButton:hover,
 body.unicorn-mode #startButton:hover,
 body.unicorn-mode #resetButton:hover,
-body.unicorn-mode #lapButton:hover {
+body.unicorn-mode #lapButton:hover,
+body.unicorn-mode #spaceButton:hover {
+
   transform: scale(1.05); 
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
   cursor: pointer; 
@@ -381,4 +391,73 @@ body.unicorn-mode #lapButton:hover {
 }
 
 
+/* -------------------------------------------SPACE STYLES------------------------------------------- */
+@font-face {
+  font-family: 'spaceFont';
+  src: url('../Assets/spaceFont.ttf') format('truetype');
+}
 
+/* Space mode background */
+body.space-mode{
+  background-image: url("../Assets/spacebackground.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #ffffff;
+  font-family: 'spaceFont';
+  cursor: url("../Assets/spaceCursor.png") 50 50, auto;
+}
+
+body.space-mode button:hover {
+  cursor: url("../Assets/spacePointer.png") 15 15, auto !important;
+}
+
+body.space-mode #timeDisplay {
+  font-size: 12vw;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  background-clip: text; 
+  -webkit-background-clip: text; 
+  color: white;  
+  font-family: 'spaceFont';
+}
+
+/*Space Mode Buttons*/
+body.space-mode #toggle, 
+body.space-mode #stopwatchButton, 
+body.space-mode #timerButton, 
+body.space-mode #startButton, 
+body.space-mode #resetButton, 
+body.space-mode #lapButton, 
+body.space-mode #spaceButton {
+  background: none !important; 
+  box-shadow: 0 4px 6px rgba(255, 255, 255, .5) !important;
+  width: 16rem; /* Set a rectangular width */
+  height: 4rem; /* Set a rectangular height */
+  border-radius: 0 !important; /* Remove rounding for sharp corners */ 
+}
+
+/* Space Mode Button Hover Effects */
+body.space-mode #toggle:hover,
+body.space-mode #stopwatchButton:hover,
+body.space-mode #timerButton:hover,
+body.space-mode #startButton:hover,
+body.space-mode #resetButton:hover,
+body.space-mode #lapButton:hover,
+body.space-mode #spaceButton:hover {
+  transform: scale(1.12); 
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  color: white !important;
+}
+
+body.space-mode footer {
+  background: none !important; 
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 1) !important;
+  color: white;
+  padding: 2rem;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: auto;
+}
