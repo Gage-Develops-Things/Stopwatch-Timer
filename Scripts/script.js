@@ -7,6 +7,7 @@ const lapButton = document.querySelector("#lapButton");
 const timerSection = document.querySelector("#timer");
 const lapDiv = document.querySelector("#lapDiv");
 const rankedLaps = document.querySelector("#rankedLaps");
+
 // These need to be initialized and updated by more than one function
 let startTime;
 let updatedTime;
@@ -72,10 +73,15 @@ function resetTimer() {
     time.innerHTML = "00:00:00:00";
     startButton.innerHTML = "Start";
     lapArray = [];
-    lapDiv.textContent = "";
-    localStorage.setItem("laps", "")
+    localStorage.setItem("Total time of laps", "")
     lapDiv.setAttribute("style", "display:none;");
-    rankedLaps.setAttribute("style", "display:none;");
+    lapArray = [];
+    count = 0;
+    eachLapArray = [];
+    differenceArray = [];
+    formattedEachLapArray = [];
+    infoArray = [];
+    
 };
 
 //Update Time Function
