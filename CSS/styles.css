@@ -1,10 +1,9 @@
-/*Styles.css*/
+/* -------------------------------------------STYLES.CSS------------------------------------------- */
 
 html {
   font-size: 62.5%;
 }
 
-/*Regular Page*/
 body {
   background-color: #a9a9a9;
   color: #ffffff;
@@ -54,56 +53,6 @@ h1.spread:hover {
   height: 3rem;
   border-radius: 3rem;
   font-size: 1.5rem;
-}
-
-
-/*Unicorn Mode Styles*/
-body.unicorn-mode #toggle {
-  background-color: #ffb3ba;
-  background: linear-gradient(45deg, #ffb3ba, #ff66b2); 
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-body.unicorn-mode #stopwatchButton {
-  background-color: #b3e0ff; 
-  background: linear-gradient(45deg, #b3e0ff, #80c7ff); 
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-body.unicorn-mode #timerButton {
-  background-color: #c4e17f; 
-  background: linear-gradient(45deg, #c4e17f, #a0d55e); 
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-body.unicorn-mode #startButton {
-  background-color: #f3c5f3; 
-  background: linear-gradient(45deg, #f3c5f3, #e0a9e0); 
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-body.unicorn-mode #resetButton {
-  background-color: #ffecb3; 
-  background: linear-gradient(45deg, #ffecb3, #fff066); 
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-body.unicorn-mode #lapButton {
-  background-color: #d9ffb3; 
-  background: linear-gradient(45deg, #d9ffb3, #a8e6cf); 
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Hover effects for the Unicorn Mode Buttons*/
-body.unicorn-mode #toggle:hover,
-body.unicorn-mode #stopwatchButton:hover,
-body.unicorn-mode #timerButton:hover,
-body.unicorn-mode #startButton:hover,
-body.unicorn-mode #resetButton:hover,
-body.unicorn-mode #lapButton:hover {
-  transform: scale(1.05); 
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
-  cursor: pointer; 
 }
 
 /*Time display for regular mode*/
@@ -174,6 +123,9 @@ body.default-mode {
   color: #333;
 }
 
+
+/* -------------------------------------------UNICORN STYLES------------------------------------------- */
+
 /*Unicorn Mode header font*/
 body.unicorn-mode h1.spread {
   background: linear-gradient(45deg, #ff99a5, #ffd280, #ffff99, #a4f5b3, #99b3ff); 
@@ -228,9 +180,61 @@ body.unicorn-mode footer {
   margin-top: auto;
 }
 
+/*Unicorn Mode Buttons*/
+body.unicorn-mode #toggle {
+  background-color: #ffb3ba;
+  background: linear-gradient(45deg, #ffb3ba, #ff66b2); 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body.unicorn-mode #stopwatchButton {
+  background-color: #b3e0ff; 
+  background: linear-gradient(45deg, #b3e0ff, #80c7ff); 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body.unicorn-mode #timerButton {
+  background-color: #c4e17f; 
+  background: linear-gradient(45deg, #c4e17f, #a0d55e); 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body.unicorn-mode #startButton {
+  background-color: #f3c5f3; 
+  background: linear-gradient(45deg, #f3c5f3, #e0a9e0); 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body.unicorn-mode #resetButton {
+  background-color: #ffecb3; 
+  background: linear-gradient(45deg, #ffecb3, #fff066); 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body.unicorn-mode #lapButton {
+  background-color: #d9ffb3; 
+  background: linear-gradient(45deg, #d9ffb3, #a8e6cf); 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover effects for the Unicorn Mode Buttons*/
+body.unicorn-mode #toggle:hover,
+body.unicorn-mode #stopwatchButton:hover,
+body.unicorn-mode #timerButton:hover,
+body.unicorn-mode #startButton:hover,
+body.unicorn-mode #resetButton:hover,
+body.unicorn-mode #lapButton:hover {
+  transform: scale(1.05); 
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
+  cursor: pointer; 
+}
 
 
-/* Modal Styles */
+
+
+
+
+/* -------------------------------------------UNICORN MODAL STYLES------------------------------------------- */
 .modal {
   display: none; /* Hidden by default */
   position: fixed;
