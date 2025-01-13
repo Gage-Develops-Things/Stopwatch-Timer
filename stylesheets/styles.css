@@ -7,6 +7,10 @@ html {
 body {
   background-color: #a9a9a9;
   color: #ffffff;
+<<<<<<< HEAD:CSS/styles.css
+  font-family: Arial, Helvetica, sans-serif;
+=======
+>>>>>>> 48c4808130927f1abd8f05ed9e420e1d4ffd12a9:stylesheets/styles.css
   min-height: 100vh;
   margin-bottom: auto;
   display: flex;
@@ -74,11 +78,15 @@ h1.spread:hover {
   font-size: 1.5rem;
 }
 
+.display {
+  max-width: 100%;
+}
+
 /*Time display for regular mode*/
 #timeDisplay {
   font-size: 15vw;
   font-weight: bold;
-  margin-bottom: 2rem;
+  margin: 2rem;
 }
 
 #startButton,
@@ -123,8 +131,10 @@ h1.spread:hover {
   align-items: center;
   flex-wrap: wrap;
 }
+
 .navContainer {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
 }
 
@@ -149,14 +159,20 @@ body.default-mode {
   color: #333;
 }
 
-
 /* UNICORN STYLES */
 
 /*Unicorn Mode header font*/
 body.unicorn-mode h1.spread {
-  background: linear-gradient(45deg, #ff99a5, #ffd280, #ffff99, #a4f5b3, #99b3ff); 
-  -webkit-background-clip: text; 
-  color: transparent; 
+  background: linear-gradient(
+    45deg,
+    #ff99a5,
+    #ffd280,
+    #ffff99,
+    #a4f5b3,
+    #99b3ff
+  );
+  -webkit-background-clip: text;
+  color: transparent;
   font-size: 4rem;
   font-weight: bold;
   transition: letter-spacing 1s ease;
@@ -165,7 +181,7 @@ body.unicorn-mode h1.spread {
 }
 
 /* Unicorn mode background */
-body.unicorn-mode.bg-secondary {
+body.unicorn-mode.secondary-bg {
   background-color: #ff99ff;
   background-image: url("../assets/fantasy-unicorn-with-digital-art-style.png");
   background-size: cover;
@@ -191,15 +207,29 @@ body.unicorn-mode #timeDisplay {
   font-size: 15vw;
   font-weight: bold;
   margin-bottom: 2rem;
-  background: linear-gradient(45deg, #ff99a5, #ffd280, #ffff99, #a4f5b3, #99b3ff); 
-  background-clip: text; 
-  -webkit-background-clip: text; 
+  background: linear-gradient(
+    45deg,
+    #ff99a5,
+    #ffd280,
+    #ffff99,
+    #a4f5b3,
+    #99b3ff
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-stroke: 2px white;
-  color: transparent;  
+  color: transparent;
 }
 
 body.unicorn-mode footer {
-  background: linear-gradient(45deg, #ff99a5, #ffd280, #ffff99, #a4f5b3, #99b3ff); 
+  background: linear-gradient(
+    45deg,
+    #ff99a5,
+    #ffd280,
+    #ffff99,
+    #a4f5b3,
+    #99b3ff
+  );
   color: black;
   padding: 2rem;
   font-size: 1.5rem;
@@ -210,43 +240,43 @@ body.unicorn-mode footer {
 /*Unicorn Mode Buttons*/
 body.unicorn-mode #toggle {
   background-color: #ffb3ba;
-  background: linear-gradient(45deg, #ffb3ba, #ff66b2); 
+  background: linear-gradient(45deg, #ffb3ba, #ff66b2);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 body.unicorn-mode #stopwatchButton {
-  background-color: #b3e0ff; 
-  background: linear-gradient(45deg, #b3e0ff, #80c7ff); 
+  background-color: #b3e0ff;
+  background: linear-gradient(45deg, #b3e0ff, #80c7ff);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 body.unicorn-mode #timerButton {
-  background-color: #c4e17f; 
-  background: linear-gradient(45deg, #c4e17f, #a0d55e); 
+  background-color: #c4e17f;
+  background: linear-gradient(45deg, #c4e17f, #a0d55e);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 body.unicorn-mode #startButton {
-  background-color: #f3c5f3; 
-  background: linear-gradient(45deg, #f3c5f3, #e0a9e0); 
+  background-color: #f3c5f3;
+  background: linear-gradient(45deg, #f3c5f3, #e0a9e0);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 body.unicorn-mode #resetButton {
-  background-color: #ffecb3; 
-  background: linear-gradient(45deg, #ffecb3, #fff066); 
+  background-color: #ffecb3;
+  background: linear-gradient(45deg, #ffecb3, #fff066);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 body.unicorn-mode #lapButton {
-  background-color: #d9ffb3; 
-  background: linear-gradient(45deg, #d9ffb3, #a8e6cf); 
+  background-color: #d9ffb3;
+  background: linear-gradient(45deg, #d9ffb3, #a8e6cf);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 body.unicorn-mode #spaceButton {
   background-color: #ffd9b3;
-  background: linear-gradient(45deg, #ffd9b3, #ffe5cc); 
+  background: linear-gradient(45deg, #ffd9b3, #ffe5cc);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -258,28 +288,23 @@ body.unicorn-mode #startButton:hover,
 body.unicorn-mode #resetButton:hover,
 body.unicorn-mode #lapButton:hover,
 body.unicorn-mode #spaceButton:hover {
-
-  transform: scale(1.05); 
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
-  cursor: pointer; 
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
-
 body.unicorn-mode #lapDiv {
-  display: none; 
+  display: none;
   font-size: x-large;
   width: 30rem;
   max-width: 80rem;
   margin: auto;
   padding: 2rem;
-  background-color: rgba(255, 105, 180, 0.5); 
+  background-color: rgba(255, 105, 180, 0.5);
   border-radius: 3rem;
   outline: 0.1rem solid #ffffff;
   box-shadow: 0 0 10px rgba(255, 105, 180, 0.8);
 }
-
-
-
 
 /* UNICORN MODAL STYLES */
 .modal {
@@ -421,28 +446,21 @@ body.unicorn-mode #lapDiv {
   border-radius: 0 0 6.25em 6.25em;
 }
 
-@media (max-width: 768px) {
-  .headerContainer {
-    justify-content: center;
-  }
-}
-
-
-/* SPACE STYLES */
+/* -------------------------------------------SPACE STYLES------------------------------------------- */
 @font-face {
-  font-family: 'spaceFont';
-  src: url('../assets/spaceFont.ttf') format('truetype');
+  font-family: "spaceFont";
+  src: url("../Assets/spaceFont.ttf") format("truetype");
 }
 
 /* Space mode background */
-body.space-mode{
-  background-image: url("../assets/spacebackground.jpg");
+body.space-mode {
+  background-image: url("../Assets/spacebackground.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   color: #ffffff;
-  font-family: 'spaceFont';
+  font-family: "spaceFont";
   cursor: url("../assets/spaceCursor.png") 50 50, auto;
 }
 
@@ -454,25 +472,25 @@ body.space-mode #timeDisplay {
   font-size: 12vw;
   font-weight: bold;
   margin-bottom: 2rem;
-  background-clip: text; 
-  -webkit-background-clip: text; 
-  color: white;  
-  font-family: 'spaceFont';
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: white;
+  font-family: "spaceFont";
 }
 
 /*Space Mode Buttons*/
-body.space-mode #toggle, 
-body.space-mode #stopwatchButton, 
-body.space-mode #timerButton, 
-body.space-mode #startButton, 
-body.space-mode #resetButton, 
-body.space-mode #lapButton, 
+body.space-mode #toggle,
+body.space-mode #stopwatchButton,
+body.space-mode #timerButton,
+body.space-mode #startButton,
+body.space-mode #resetButton,
+body.space-mode #lapButton,
 body.space-mode #spaceButton {
-  background: none !important; 
-  box-shadow: 0 4px 6px rgba(255, 255, 255, .5) !important;
+  background: none !important;
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.5) !important;
   width: 16rem; /* Set a rectangular width */
   height: 4rem; /* Set a rectangular height */
-  border-radius: 0 !important; /* Remove rounding for sharp corners */ 
+  border-radius: 0 !important; /* Remove rounding for sharp corners */
 }
 
 /* Space Mode Button Hover Effects */
@@ -483,18 +501,28 @@ body.space-mode #startButton:hover,
 body.space-mode #resetButton:hover,
 body.space-mode #lapButton:hover,
 body.space-mode #spaceButton:hover {
-  transform: scale(1.12); 
+  transform: scale(1.12);
   box-shadow: 0 6px 12px rgba(255, 255, 255, 0.7);
   cursor: pointer;
   color: white !important;
 }
 
 body.space-mode footer {
-  background: none !important; 
+  background: none !important;
   box-shadow: 0 4px 6px rgba(255, 255, 255, 1) !important;
   color: white;
   padding: 2rem;
   font-size: 1.5rem;
   text-align: center;
   margin-top: auto;
+}
+
+@media (max-width: 1040px) {
+  .navContainer {
+    justify-content: center;
+  }
+
+  .headerContainer {
+    justify-content: center;
+  }
 }
