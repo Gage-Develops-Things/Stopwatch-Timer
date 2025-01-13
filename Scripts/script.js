@@ -32,7 +32,7 @@ let eachLapArray = [];
 let differenceArray = [];
 let formattedEachLapArray = [];
 let infoArray = [];
-infoArray[count] = {lap: `${count+1}`, lapLength: eachLapArray[count], formattedLapLength: formattedEachLapArray[count]};
+
 
 function startTimer() {
   // if its not running, then start the stopwatch. Use Date.now() to return accurate time as set interval does not.
@@ -79,49 +79,48 @@ function updateTime() {
                      (deciseconds);
 };
 
+// Initialize varibles, will be updated to be best lap every lap.
+const rLap = document.createElement("p");
+rankedLaps.appendChild(rLap);
+
 function lapTime(){
-
-  // create lap paragraph element
-  const lapP = document.createElement("p");
-  // append child to lapDiv section
-  lapDiv.appendChild(lapP);
-  lapDiv.setAttribute("style", "display:block");
-  // push content to lap paragraph
-  // populate lap array with laps
- 
-  /*placeholder -->*/   lapArray.push(time.textContent);
-  /*placeholder -->*/   lapP.textContent = `${count + 1}.  ${time.textContent}`
-
-  // stringify lap array and send array to local storage
-  JSON.stringify(lapArray);
-  localStorage.setItem("laps", lapArray);
-
-  // began building structure for a lap div
+  // Began building structure for a lap div
+  // Push difference (total time) each time a lap event occurs
   differenceArray.push(difference)
+  // The eachLapArray is the length of each lap, derived from the difference array.
   eachLapArray[count] = (isNaN(differenceArray[count]-differenceArray[count-1]) ? differenceArray[count] : (differenceArray[count]-differenceArray[count-1]));
+  // formatting for human eyes vs. milliseconds
   const hours = Math.floor((eachLapArray[count] % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   const minutes = Math.floor((eachLapArray[count] % (1000 * 60 * 60)) / (1000 * 60));
   const seconds = Math.floor((eachLapArray[count] % (1000 * 60)) / 1000);
   const deciseconds = Math.floor((eachLapArray[count] % 1000) / 10);
-
   let formattedCount = (hours < 10 ? "0" + hours : hours) + ":" + 
                    (minutes < 10 ? "0" + minutes : minutes) + ":" + 
                    (seconds < 10 ? "0" + seconds : seconds) + ":" +
                    (deciseconds);
-
+  // Sending now formatted info to the appropriate array
   formattedEachLapArray.push(formattedCount);
-  
-  
-
+  // filling out array of objects, so they can be referenced and ordered while maintaining original array index
+  infoArray[count] = {lap: `${count+1}`, lapLength: eachLapArray[count], formattedLapLength: formattedEachLapArray[count]};
   infoArray.sort(function(a,b){return a.lapLength-b.lapLength});
-
-  const rLap = document.createElement("p");
-  rankedLaps.appendChild(rLap);
-  if (infoArray[0].lap){
+  // updating the "Your Best Lap" p element every time the lap event occurs, if it is in fact the best lap
   rLap.innerHTML = `${infoArray[0].lap}. ${infoArray[0].formattedLapLength}`
-}
+  // create lap paragraph element each time lap event occurs
+  const lapP = document.createElement("p");
+  // append each child to lapDiv section
+  lapDiv.appendChild(lapP);
+  lapDiv.setAttribute("style", "display:block");
+  // push content to lap paragraph
+  // populate lap array with laps from the display text and push info to lap paragraph
+ 
+  lapArray.push(time.textContent);
+  lapP.textContent = `${count + 1}.   ${time.textContent}`
 
-  console.log(infoArray);
+  // stringify lap array and info Array and send to local storage
+  JSON.stringify(lapArray);
+  localStorage.setItem("Total time of laps", lapArray);
+
+  // increasing count
   count++;
 };
 
