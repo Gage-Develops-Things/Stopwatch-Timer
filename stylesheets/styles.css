@@ -7,11 +7,29 @@ html {
 body {
   background-color: #a9a9a9;
   color: #ffffff;
-  font-family: Arial, Helvetica, sans-serif;
   min-height: 100vh;
   margin-bottom: auto;
   display: flex;
   flex-direction: column;
+}
+
+.roboto-flex-trial {
+  font-family: "Roboto Flex", serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "wdth" 100,
+    "GRAD" 0,
+    "XOPQ" 96,
+    "XTRA" 468,
+    "YOPQ" 79,
+    "YTAS" 750,
+    "YTDE" -203,
+    "YTFI" 738,
+    "YTLC" 514,
+    "YTUC" 712;
 }
 
 header {
