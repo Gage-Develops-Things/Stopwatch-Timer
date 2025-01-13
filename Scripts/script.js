@@ -1,4 +1,4 @@
-//Script.js
+//script.js
 
 const time = document.querySelector('#timeDisplay');
 const startButton = document.querySelector('#startButton');
@@ -6,9 +6,24 @@ const resetButton = document.querySelector('#resetButton');
 const lapButton = document.querySelector("#lapButton");
 const timerSection = document.querySelector("#timer");
 const lapDiv = document.querySelector("#lapDiv");
+const rankedLaps = document.querySelector("#rankedLaps");
+const lapList = document.querySelector("#lapList")
+
+// These need to be initialized and updated by more than one function
+let startTime;
+let updatedTime;
+let difference = 0;
+let tInterval;
+let running = false;
+// these are needed for the lap function
+let lapArray = [];
+let count = 0;
+let eachLapArray = [];
+let differenceArray = [];
+let formattedEachLapArray = [];
+let infoArray = [];
 
 // my button for the event listener
-
 const numberOfButtons = document.querySelectorAll("button").length;
 
 
@@ -25,7 +40,7 @@ for (let i = 0; i < numberOfButtons; i++) {
 for (let i = 0; i < numberOfButtons; i++) {
   document.querySelectorAll("button")[i].addEventListener("click", function () {
     if (document.body.classList.contains("space-mode")) {
-      const sparkleSound = new Audio("./Assets/space.mp3");
+      const spaceSound = new Audio("./assets/space.mp3");
       spaceSound.play();
     }
   });
@@ -33,14 +48,9 @@ for (let i = 0; i < numberOfButtons; i++) {
 
 
 //Timer 
-let startTime;
-let updatedTime;
-let difference = 0;
-let tInterval;
-let running = false;
-let lapArray = [];
 
-//Start Timer Function
+
+
 function startTimer() {
   // if its not running, then start the stopwatch. Use Date.now() to return accurate time as set interval does not.
     if (!running) {
@@ -64,9 +74,15 @@ function resetTimer() {
     time.innerHTML = "00:00:00:00";
     startButton.innerHTML = "Start";
     lapArray = [];
-    lapDiv.textContent = "";
-    localStorage.setItem("laps", "")
+    localStorage.setItem("Total time of laps", "")
     lapDiv.setAttribute("style", "display:none;");
+    lapArray = [];
+    count = 0;
+    eachLapArray = [];
+    differenceArray = [];
+    formattedEachLapArray = [];
+    infoArray = [];
+    lapList.textContent = "";
 };
 
 //Update Time Function
@@ -86,20 +102,51 @@ function updateTime() {
 };
 
 //Lap Time Function
+
+// This creates the best lap, which will be populated later on.
+const rLap = document.createElement("p");
+rankedLaps.appendChild(rLap);
+
 function lapTime(){
-  // create lap paragraph element
-  const lapP = document.createElement("p")
-  // append child to lapDiv section
-  lapDiv.appendChild(lapP);
+  // Push difference (total time) each time a lap event occurs
+  differenceArray.push(difference)
+  // The eachLapArray is the length of each lap, derived from the difference array.
+  eachLapArray[count] = (isNaN(differenceArray[count]-differenceArray[count-1]) ? differenceArray[count] : (differenceArray[count]-differenceArray[count-1]));
+  // formatting for human eyes vs. milliseconds
+  const hours = Math.floor((eachLapArray[count] % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((eachLapArray[count] % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((eachLapArray[count] % (1000 * 60)) / 1000);
+  const deciseconds = Math.floor((eachLapArray[count] % 1000) / 10);
+  let formattedCount = (hours < 10 ? "0" + hours : hours) + ":" + 
+                   (minutes < 10 ? "0" + minutes : minutes) + ":" + 
+                   (seconds < 10 ? "0" + seconds : seconds) + ":" +
+                   (deciseconds);
+  // Sending now formatted info to the appropriate array
+  formattedEachLapArray.push(formattedCount);
+  // filling out array of objects, so they can be referenced and ordered while maintaining original array index
+  infoArray[count] = {lap: `${count+1}`, lapLength: eachLapArray[count], formattedLapLength: formattedEachLapArray[count]};
+  infoArray.sort(function(a,b){return a.lapLength-b.lapLength});
+  // updating the "Your Best Lap" p element every time the lap event occurs, if it is in fact the best lap
+  rLap.innerHTML = `${infoArray[0].lap}. ${infoArray[0].formattedLapLength}`
+  // create lap paragraph element each time lap event occurs
+  const lapLi = document.createElement("li");
+  // append each child to lapDiv section
+  lapList.appendChild(lapLi);
   lapDiv.setAttribute("style", "display:block");
   // push content to lap paragraph
-  lapP.textContent = time.textContent;
-  // populate lap array with laps
-  lapArray.push(lapP.textContent)
-  // stringify lap array and send array to local storage
+  // populate lap array with laps from the display text and push info to lap paragraph
+  lapArray.push(time.textContent);
+  lapLi.textContent = `${count + 1}.   ${time.textContent}`
+  // stringify lap array and info Array and send to local storage
   JSON.stringify(lapArray);
-  localStorage.setItem("laps", lapArray);
-}
+  localStorage.setItem("Total time of laps", lapArray);
+  // increasing count
+  count++;
+};
+
+
+
+
 
 
 
@@ -107,7 +154,7 @@ const toggleButton = document.querySelector('#toggle');
 const spaceButton =  document.querySelector('#spaceButton');
 
 
-//--------MODAL--------
+//MODAL
 const unicornModal = document.querySelector('#unicornModal');
 const closeModalButton = document.querySelector('#closeModal');
 
@@ -147,7 +194,7 @@ window.addEventListener('click', (event) => {
   } 
 });
  
-////---------------------------Space JS---------------------------
+//Space JS
  spaceButton.addEventListener('click', () => {
   const spaceSound = new Audio("./assets/space.mp3");
   spaceSound.play();

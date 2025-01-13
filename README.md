@@ -1,14 +1,15 @@
 # ChronoByte
 
 ## Description
-This Stopwatch/Timer project lets users track time easily. It includes a stopwatch to measure elapsed time and a timer to count down from a set duration. 
+This is a web-based stopwatch and timer applications which lets users track time. The stopwatch measures elapsed time and the timer counts down from a set duration. It features a default mode, a unicorn mode, and a space mode. 
 
 ## Table of Contents
 - [Installation](#installation)
 - [Features](#features)
-- [Contributers](#contributers)
+- [Credits](#credits)
+- [Contributors](#contributors)
 - [License](#license)
-
+  
 ## Installation
 1. Clone the repository:
    ```bash
@@ -18,17 +19,47 @@ This Stopwatch/Timer project lets users track time easily. It includes a stopwat
    ```bash
    cd Stopwatch-Timer
    ```
-3. Install dependencies:
-   ```bash
-   npm install
-   ```
+3. Open index.html in your browser to view this application.
 
 ## Features
-   *****Work in Progress
 
+### Functionality:
+- Timer and Stopwatch with start, stop, reset, and lap buttons.
+- Interactive modals and hover animations.
+- Designed for desktop and mobile.
+
+### Modes:
+- **Default mode**: Gray mode with no special background or effects.
+- **Unicorn mode**: Unicorn background, custom cursor, and fun gradients.
+- **Space mode**: Space background, custom cursor, and custom font.
+
+## Credits
+
+- **Rainbow circle CSS animation on the Unicorn Mode modal**:  
+  [Source](https://codingartistweb.com/2022/08/rainbow-animation-with-css/)  
+  The code used for the rainbow animation is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+
+- **Rainbow mode background image**:  
+  [Source](https://www.freepik.com/free-ai-image/fantasy-unicorn-with-digital-art-style_299903978.htm#fromView=keyword&page=1&position=14&uuid=2ae207a7-b843-4145-bda9-11ad39074bdd&new_detail=true)
+
+- **Rainbow unicorn cursor image**:  
+  [Source](https://www.freeiconspng.com/img/44485)
+
+- **Rainbow star pointer cursor**:  
+  [Source](https://www.cleanpng.com/png-shiny-bright-colorful-star-8293225/download-png.html)
+
+- **Space mode background image**:  
+  [Source](https://www.freepik.com/free-ai-image/fantasy-style-galaxy-background_122459830.htm#fromView=keyword&page=1&position=26&uuid=af59d71b-b24c-4c5c-85e1-80821947b28e&new_detail=true)
+
+- **Space rocket cursor**:  
+  [Source](https://www.freepik.com/free-vector/cute-astronaut-dancing-rocket-cartoon-vector-icon-illustration-science-technology-isolated-flat_67585797.htm#fromView=keyword&page=1&position=16&uuid=80c6f55d-af51-4a78-860c-addb89bb57b1&new_detail=true)
+
+- **Space rocket pointer**:  
+  [Source](https://www.freepik.com/free-vector/cute-astronaut-pointing-rocket-cartoon-vector-icon-illustration-science-technology-icon-isolated_25864838.htm#fromView=search&page=1&position=8&uuid=e9a19847-37d2-472b-a9d9-51159a886e84&new_detail=true)
+
+      
 ## Contributers
-Jat Bhatt, Maya Li Bauer, Lindsey Vigessa, Gage Degerness
-
+Maya Li Bauer, Jat Bhatt, Gage Degerness, and Lindsey Vigessa.
 
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
@@ -38,55 +69,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 
 
-
-
-
-
-
-
-
-
-
-## Below is for Contributer Reference
-
-
-### What is the major concept for the application?
-  Acts as a stopwatch so user can time themselves performing different tasks.
-### Give at least one user story.
-  As a user,
-  I want a stopwatch app,
-  so I can time different activities.
-### Give one to three acceptance criteria to match your user stories.
-Stopwatch Core Functionality
-Given the user accesses the ChronoByte platform,
-When they start, stop, or reset the stopwatch,
-Then the stopwatch should function without delay and display time in hours, minutes, seconds, and milliseconds.
-
-Acceptance Criteria:
-Stopwatch starts, stops, and resets accurately.
-Time displays in real-time without lag.
-Time is displayed up to milliseconds (e.g., HH:MM:SS:MS).
-The stopwatch resets to 00:00:00:000 upon reset.
-
-### Create a mobile view and full-screen wireframe for each page & section of your website.
-
-### Plan & draw out your application folder structure.
-  ChronoByte Folder
-    -index.html
-    -assets folder
-      -css folder
-        -reset.css
-        -styles.css
-      -scripts folder
-        -script.js
-### Which CSS framework are you considering (this is allowed to change later, I just want to know what you've researched).
-  Bootstrap.
-### Who is likely to be responsible for what (this is allowed to change later).
-  All have access to html but there are two teams to focus on styling and functionality.
-  
-  JS Team:
-    - Gage
-    - Maya Li
-  CSS Team:
-    - Jay
-    - Lindsey

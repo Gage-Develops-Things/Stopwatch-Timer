@@ -1,4 +1,4 @@
-/* -------------------------------------------STYLES.CSS------------------------------------------- */
+/*STYLES.CSS*/
 
 html {
   font-size: 62.5%;
@@ -95,6 +95,13 @@ h1.spread:hover {
   outline: 0.1rem solid #ffffff;
 }
 
+#lapList {
+  list-style-type: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 .headerContainer {
   display: flex;
   flex-direction: row;
@@ -130,7 +137,7 @@ body.default-mode {
   color: #333;
 }
 
-/* -------------------------------------------UNICORN STYLES------------------------------------------- */
+/* UNICORN STYLES */
 
 /*Unicorn Mode header font*/
 body.unicorn-mode h1.spread {
@@ -154,7 +161,7 @@ body.unicorn-mode h1.spread {
 /* Unicorn mode background */
 body.unicorn-mode.bg-secondary {
   background-color: #ff99ff;
-  background-image: url("../Assets/fantasy-unicorn-with-digital-art-style.png");
+  background-image: url("../assets/fantasy-unicorn-with-digital-art-style.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -166,12 +173,12 @@ body.unicorn-mode.bg-secondary {
 
 /*Unicorn Cursor*/
 body.unicorn-mode {
-  cursor: url("../Assets/cursor.png") 50 50, auto;
+  cursor: url("../assets/cursor.png") 50 50, auto;
   font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
 body.unicorn-mode button:hover {
-  cursor: url("../Assets/star.png") 15 15, auto !important;
+  cursor: url("../assets/star.png") 15 15, auto !important;
 }
 
 body.unicorn-mode #timeDisplay {
@@ -264,7 +271,20 @@ body.unicorn-mode #spaceButton:hover {
   cursor: pointer;
 }
 
-/* -------------------------------------------UNICORN MODAL STYLES------------------------------------------- */
+body.unicorn-mode #lapDiv {
+  display: none;
+  font-size: x-large;
+  width: 30rem;
+  max-width: 80rem;
+  margin: auto;
+  padding: 2rem;
+  background-color: rgba(255, 105, 180, 0.5);
+  border-radius: 3rem;
+  outline: 0.1rem solid #ffffff;
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.8);
+}
+
+/* UNICORN MODAL STYLES */
 .modal {
   display: none; /* Hidden by default */
   position: fixed;
@@ -419,11 +439,11 @@ body.space-mode {
   background-attachment: fixed;
   color: #ffffff;
   font-family: "spaceFont";
-  cursor: url("../Assets/spaceCursor.png") 50 50, auto;
+  cursor: url("../assets/spaceCursor.png") 50 50, auto;
 }
 
 body.space-mode button:hover {
-  cursor: url("../Assets/spacePointer.png") 15 15, auto !important;
+  cursor: url("../assets/spacePointer.png") 15 15, auto !important;
 }
 
 body.space-mode #timeDisplay {

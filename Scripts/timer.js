@@ -1,3 +1,5 @@
+//timer.js
+
 const goButton = document.querySelector('#goButton');
 const clearButton = document.querySelector('#clearButton');
 const time = document.querySelector('#timeDisplay');
@@ -27,10 +29,15 @@ function startTimer() {
   // Sets interval in variable
   timerInterval = setInterval(function () {
 
-    const hours = Math.floor((userInput / 1000)% (60 * 60 * 24));
-    const minutes = Math.floor((userInput / 1000) % (60 * 60));
-    const seconds = Math.floor((userInput / 1000) % 60);
-    const centiseconds = Math.floor((userInput)/ 10)
+    // var hours = userInput % (1000 * 60 * 60)
+    // const minutes = (userInput - hours*1000*60*60) % (1000 * 60)
+    // const seconds = (userInput - hours*1000*60*60 - minutes*1000*60) % (1000)
+    // const centiseconds = (userInput - hours*1000*60*60 - minutes*1000*60 - seconds*1000)
+
+    const hours = Math.floor((userInput % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((userInput % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((userInput % (1000 * 60)) / 1000);
+    const centiseconds = Math.floor((userInput % 1000) / 10);
     console.log(seconds)
 
     time.innerHTML = (hours < 10 ? "0" + hours : hours) + ":" + 
@@ -44,7 +51,7 @@ function startTimer() {
         time.innerHTML = "Time is Up!"
     }
 
-    userInput --;
+    userInput -=10;
 
   }, 10);
 };
