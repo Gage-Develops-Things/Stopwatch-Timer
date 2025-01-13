@@ -57,6 +57,16 @@ This is a web-based stopwatch and timer applications which lets users track time
 - **Space rocket pointer**:  
   [Source](https://www.freepik.com/free-vector/cute-astronaut-pointing-rocket-cartoon-vector-icon-illustration-science-technology-icon-isolated_25864838.htm#fromView=search&page=1&position=8&uuid=e9a19847-37d2-472b-a9d9-51159a886e84&new_detail=true)
 
+- **Google Font - Roboto Flex**:
+https://fonts.google.com/
+
+- **Yahren Space Font**:  
+[Source](https://www.dafont.com/yahren.font)
+
+## Screenshot
+ - **See assets folder**
+
+
       
 ## Contributers
 Maya Li Bauer, Jat Bhatt, Gage Degerness, and Lindsey Vigessa.
