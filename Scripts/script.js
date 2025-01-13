@@ -7,6 +7,7 @@ const lapButton = document.querySelector("#lapButton");
 const timerSection = document.querySelector("#timer");
 const lapDiv = document.querySelector("#lapDiv");
 const rankedLaps = document.querySelector("#rankedLaps");
+const lapList = document.querySelector("#lapList")
 
 // These need to be initialized and updated by more than one function
 let startTime;
@@ -81,7 +82,7 @@ function resetTimer() {
     differenceArray = [];
     formattedEachLapArray = [];
     infoArray = [];
-    
+    lapList.textContent = "";
 };
 
 //Update Time Function
@@ -128,14 +129,14 @@ function lapTime(){
   // updating the "Your Best Lap" p element every time the lap event occurs, if it is in fact the best lap
   rLap.innerHTML = `${infoArray[0].lap}. ${infoArray[0].formattedLapLength}`
   // create lap paragraph element each time lap event occurs
-  const lapP = document.createElement("p");
+  const lapLi = document.createElement("li");
   // append each child to lapDiv section
-  lapDiv.appendChild(lapP);
+  lapList.appendChild(lapLi);
   lapDiv.setAttribute("style", "display:block");
   // push content to lap paragraph
   // populate lap array with laps from the display text and push info to lap paragraph
   lapArray.push(time.textContent);
-  lapP.textContent = `${count + 1}.   ${time.textContent}`
+  lapLi.textContent = `${count + 1}.   ${time.textContent}`
   // stringify lap array and info Array and send to local storage
   JSON.stringify(lapArray);
   localStorage.setItem("Total time of laps", lapArray);
