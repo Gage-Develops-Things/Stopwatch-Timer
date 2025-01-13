@@ -6,6 +6,7 @@ const resetButton = document.querySelector('#resetButton');
 const lapButton = document.querySelector("#lapButton");
 const timerSection = document.querySelector("#timer");
 const lapDiv = document.querySelector("#lapDiv");
+const rankedLaps = document.querySelector("#rankedLaps");
 
 // my button for the event listener
 
@@ -26,6 +27,12 @@ let difference = 0;
 let tInterval;
 let running = false;
 let lapArray = [];
+let count = 0;
+let eachLapArray = [];
+let differenceArray = [];
+let formattedEachLapArray = [];
+let infoArray = [];
+infoArray[count] = {lap: `${count+1}`, lapLength: eachLapArray[count], formattedLapLength: formattedEachLapArray[count]};
 
 function startTimer() {
   // if its not running, then start the stopwatch. Use Date.now() to return accurate time as set interval does not.
@@ -52,7 +59,10 @@ function resetTimer() {
     lapDiv.textContent = "";
     localStorage.setItem("laps", "")
     lapDiv.setAttribute("style", "display:none;");
+    rankedLaps.setAttribute("style", "display:none;");
 };
+
+
 
 function updateTime() {
     updatedTime = Date.now();
@@ -70,19 +80,54 @@ function updateTime() {
 };
 
 function lapTime(){
+
   // create lap paragraph element
-  const lapP = document.createElement("p")
+  const lapP = document.createElement("p");
   // append child to lapDiv section
   lapDiv.appendChild(lapP);
   lapDiv.setAttribute("style", "display:block");
   // push content to lap paragraph
-  lapP.textContent = time.textContent;
   // populate lap array with laps
-  lapArray.push(lapP.textContent)
+ 
+  /*placeholder -->*/   lapArray.push(time.textContent);
+  /*placeholder -->*/   lapP.textContent = `${count + 1}.  ${time.textContent}`
+
   // stringify lap array and send array to local storage
   JSON.stringify(lapArray);
   localStorage.setItem("laps", lapArray);
+
+  // began building structure for a lap div
+  differenceArray.push(difference)
+  eachLapArray[count] = (isNaN(differenceArray[count]-differenceArray[count-1]) ? differenceArray[count] : (differenceArray[count]-differenceArray[count-1]));
+  const hours = Math.floor((eachLapArray[count] % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((eachLapArray[count] % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((eachLapArray[count] % (1000 * 60)) / 1000);
+  const deciseconds = Math.floor((eachLapArray[count] % 1000) / 10);
+
+  let formattedCount = (hours < 10 ? "0" + hours : hours) + ":" + 
+                   (minutes < 10 ? "0" + minutes : minutes) + ":" + 
+                   (seconds < 10 ? "0" + seconds : seconds) + ":" +
+                   (deciseconds);
+
+  formattedEachLapArray.push(formattedCount);
+  
+  
+
+  infoArray.sort(function(a,b){return a.lapLength-b.lapLength});
+  
+  const rLap = document.createElement("p");
+  rankedLaps.appendChild(rLap);
+  if (infoArray[0].lap){
+  rLap.innerHTML = `${infoArray[0].lap}. ${infoArray[0].formattedLapLength}`
 }
+
+  console.log(infoArray);
+  count++;
+};
+
+
+
+
 
 
 //--------MODAL--------
