@@ -4,6 +4,7 @@ html {
   font-size: 62.5%;
 }
 
+/*Regular Page*/
 body {
   background-color: #a9a9a9;
   color: #ffffff;
@@ -55,43 +56,45 @@ h1.spread:hover {
   font-size: 1.5rem;
 }
 
+
+/*Unicorn Mode Styles*/
 body.unicorn-mode #toggle {
-  background-color: #ffb3ba; /* Pastel Pink */
+  background-color: #ffb3ba;
   background: linear-gradient(45deg, #ffb3ba, #ff66b2); 
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 body.unicorn-mode #stopwatchButton {
-  background-color: #b3e0ff; /* Pastel Blue */
+  background-color: #b3e0ff; 
   background: linear-gradient(45deg, #b3e0ff, #80c7ff); 
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 body.unicorn-mode #timerButton {
-  background-color: #c4e17f; /* Pastel Green */
+  background-color: #c4e17f; 
   background: linear-gradient(45deg, #c4e17f, #a0d55e); 
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 body.unicorn-mode #startButton {
-  background-color: #f3c5f3; /* Pastel Lavender */
+  background-color: #f3c5f3; 
   background: linear-gradient(45deg, #f3c5f3, #e0a9e0); 
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 body.unicorn-mode #resetButton {
-  background-color: #ffecb3; /* Pastel Yellow */
+  background-color: #ffecb3; 
   background: linear-gradient(45deg, #ffecb3, #fff066); 
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 body.unicorn-mode #lapButton {
-  background-color: #d9ffb3; /* Pastel Mint */
+  background-color: #d9ffb3; 
   background: linear-gradient(45deg, #d9ffb3, #a8e6cf); 
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Hover Effects */
+/* Hover effects for the Unicorn Mode Buttons*/
 body.unicorn-mode #toggle:hover,
 body.unicorn-mode #stopwatchButton:hover,
 body.unicorn-mode #timerButton:hover,
@@ -99,13 +102,11 @@ body.unicorn-mode #startButton:hover,
 body.unicorn-mode #resetButton:hover,
 body.unicorn-mode #lapButton:hover {
   transform: scale(1.05); 
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
   cursor: pointer; 
 }
 
-
-
-
+/*Time display for regular mode*/
 #timeDisplay {
   font-size: 15vw;
   font-weight: bold;
@@ -173,17 +174,17 @@ body.default-mode {
   color: #333;
 }
 
-
+/*Unicorn Mode header font*/
 body.unicorn-mode h1.spread {
-  background: linear-gradient(45deg, #fd004c, #fe9000, #fff020, #3edf4b, #3363ff); /* Rainbow gradient */
+  background: linear-gradient(45deg, #ff99a5, #ffd280, #ffff99, #a4f5b3, #99b3ff); 
   -webkit-background-clip: text; 
   color: transparent; 
   font-size: 4rem;
   font-weight: bold;
   transition: letter-spacing 1s ease;
   letter-spacing: 0;
+  -webkit-text-stroke: 1px white;
 }
-
 
 /* Unicorn mode background */
 body.unicorn-mode.bg-secondary {
@@ -196,7 +197,7 @@ body.unicorn-mode.bg-secondary {
   color: #ffffff;
 }
 
-
+/*Unicorn mode body*/
 body.unicorn-mode {
   cursor: url("../Assets/cursor.png") 50 50, auto;
   font-family: "Comic Sans MS", cursive, sans-serif;
@@ -206,22 +207,20 @@ body.unicorn-mode button:hover {
   cursor: url("../Assets/star.png") 15 15, auto !important;
 }
 
-
-
-
 body.unicorn-mode #timeDisplay {
   font-size: 15vw;
   font-weight: bold;
   margin-bottom: 2rem;
-  background: linear-gradient(45deg, #ff004c, #ff9000, #fff020, #3edf4b, #3363ff); 
+  background: linear-gradient(45deg, #ff99a5, #ffd280, #ffff99, #a4f5b3, #99b3ff); 
   background-clip: text; 
   -webkit-background-clip: text; 
-  color: transparent; 
+  -webkit-text-stroke: 2px white;
+  color: transparent;  
   
 }
 
 body.unicorn-mode footer {
-  background: linear-gradient(45deg, #fd004c, #fe9000, #fff020, #3edf4b, #3363ff); 
+  background: linear-gradient(45deg, #ff99a5, #ffd280, #ffff99, #a4f5b3, #99b3ff); 
   color: black;
   padding: 2rem;
   font-size: 1.5rem;
@@ -277,7 +276,7 @@ body.unicorn-mode footer {
   cursor: pointer;
 }
 
-/* Rainbow animation */
+/* Rainbow animation taken from codepen. See README.md*/
 .container {
   height: 34em;
   width: 34em;
