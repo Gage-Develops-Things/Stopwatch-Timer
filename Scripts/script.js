@@ -7,9 +7,21 @@ const lapButton = document.querySelector("#lapButton");
 const timerSection = document.querySelector("#timer");
 const lapDiv = document.querySelector("#lapDiv");
 const rankedLaps = document.querySelector("#rankedLaps");
+// These need to be initialized and updated by more than one function
+let startTime;
+let updatedTime;
+let difference = 0;
+let tInterval;
+let running = false;
+// these are needed for the lap function
+let lapArray = [];
+let count = 0;
+let eachLapArray = [];
+let differenceArray = [];
+let formattedEachLapArray = [];
+let infoArray = [];
 
 // my button for the event listener
-
 const numberOfButtons = document.querySelectorAll("button").length;
 
 for (let i = 0; i < numberOfButtons; i++) {
@@ -21,17 +33,7 @@ for (let i = 0; i < numberOfButtons; i++) {
   });
 }
 
-let startTime;
-let updatedTime;
-let difference = 0;
-let tInterval;
-let running = false;
-let lapArray = [];
-let count = 0;
-let eachLapArray = [];
-let differenceArray = [];
-let formattedEachLapArray = [];
-let infoArray = [];
+
 
 
 function startTimer() {
@@ -79,10 +81,15 @@ function updateTime() {
                      (deciseconds);
 };
 
+
+
+
+// Lap Functionality
+
 // Initialize varibles, will be updated to be best lap every lap.
 const rLap = document.createElement("p");
 rankedLaps.appendChild(rLap);
-
+// lap function
 function lapTime(){
   // Began building structure for a lap div
   // Push difference (total time) each time a lap event occurs
@@ -112,14 +119,11 @@ function lapTime(){
   lapDiv.setAttribute("style", "display:block");
   // push content to lap paragraph
   // populate lap array with laps from the display text and push info to lap paragraph
- 
   lapArray.push(time.textContent);
   lapP.textContent = `${count + 1}.   ${time.textContent}`
-
   // stringify lap array and info Array and send to local storage
   JSON.stringify(lapArray);
   localStorage.setItem("Total time of laps", lapArray);
-
   // increasing count
   count++;
 };
