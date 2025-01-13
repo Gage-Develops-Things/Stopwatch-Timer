@@ -167,7 +167,7 @@ body.unicorn-mode h1.spread {
 /* Unicorn mode background */
 body.unicorn-mode.bg-secondary {
   background-color: #ff99ff;
-  background-image: url("../assets/fantasy-unicorn-with-digital-art-style.png");
+  background-image: url("./assets/fantasy-unicorn-with-digital-art-style.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -179,12 +179,12 @@ body.unicorn-mode.bg-secondary {
 
 /*Unicorn Cursor*/
 body.unicorn-mode {
-  cursor: url("../assets/cursor.png") 50 50, auto;
+  cursor: url("./assets/cursor.png") 50 50, auto;
   font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
 body.unicorn-mode button:hover {
-  cursor: url("../assets/star.png") 15 15, auto !important;
+  cursor: url("./assets/star.png") 15 15, auto !important;
 }
 
 body.unicorn-mode #timeDisplay {
@@ -431,23 +431,23 @@ body.unicorn-mode #lapDiv {
 /* SPACE STYLES */
 @font-face {
   font-family: 'spaceFont';
-  src: url('../assets/spaceFont.ttf') format('truetype');
+  src: url('./assets/spaceFont.ttf') format('truetype');
 }
 
 /* Space mode background */
 body.space-mode{
-  background-image: url("../assets/spacebackground.jpg");
+  background-image: url("./assets/spacebackground.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   color: #ffffff;
   font-family: 'spaceFont';
-  cursor: url("../assets/spaceCursor.png") 50 50, auto;
+  cursor: url("./assets/spaceCursor.png") 50 50, auto;
 }
 
 body.space-mode button:hover {
-  cursor: url("../assets/spacePointer.png") 15 15, auto !important;
+  cursor: url("./assets/spacePointer.png") 15 15, auto !important;
 }
 
 body.space-mode #timeDisplay {
