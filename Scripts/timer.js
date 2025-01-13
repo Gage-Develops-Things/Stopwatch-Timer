@@ -1,3 +1,5 @@
+//timer.js
+
 const goButton = document.querySelector('#goButton');
 const clearButton = document.querySelector('#clearButton');
 const time = document.querySelector('#timeDisplay');

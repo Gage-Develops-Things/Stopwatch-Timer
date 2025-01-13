@@ -1,4 +1,4 @@
-//Script.js
+//script.js
 
 const time = document.querySelector('#timeDisplay');
 const startButton = document.querySelector('#startButton');
@@ -39,7 +39,7 @@ for (let i = 0; i < numberOfButtons; i++) {
 for (let i = 0; i < numberOfButtons; i++) {
   document.querySelectorAll("button")[i].addEventListener("click", function () {
     if (document.body.classList.contains("space-mode")) {
-      const sparkleSound = new Audio("./Assets/space.mp3");
+      const sparkleSound = new Audio("./assets/space.mp3");
       spaceSound.play();
     }
   });
@@ -153,7 +153,7 @@ const toggleButton = document.querySelector('#toggle');
 const spaceButton =  document.querySelector('#spaceButton');
 
 
-//--------MODAL--------
+//MODAL
 const unicornModal = document.querySelector('#unicornModal');
 const closeModalButton = document.querySelector('#closeModal');
 
@@ -193,7 +193,7 @@ window.addEventListener('click', (event) => {
   } 
 });
  
-////---------------------------Space JS---------------------------
+//Space JS
  spaceButton.addEventListener('click', () => {
   const spaceSound = new Audio("./assets/space.mp3");
   spaceSound.play();
