@@ -60,10 +60,12 @@ This is a web-based stopwatch and timer applications which lets users track time
 - **Google Font - Roboto Flex**:
 https://fonts.google.com/
 
-## Screenshot
- - **See assets folder**
 - **Yahren Space Font**:  
 [Source](https://www.dafont.com/yahren.font)
+
+## Screenshot
+ - **See assets folder**
+
 
       
 ## Contributers
