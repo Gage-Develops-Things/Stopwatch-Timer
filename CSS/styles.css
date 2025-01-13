@@ -240,6 +240,18 @@ body.unicorn-mode #spaceButton:hover {
 }
 
 
+body.unicorn-mode #lapDiv {
+  display: none; 
+  font-size: x-large;
+  width: 30rem;
+  max-width: 80rem;
+  margin: auto;
+  padding: 2rem;
+  background-color: rgba(255, 105, 180, 0.5); 
+  border-radius: 3rem;
+  outline: 0.1rem solid #ffffff;
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.8);
+}
 
 
 
