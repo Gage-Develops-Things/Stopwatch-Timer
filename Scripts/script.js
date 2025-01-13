@@ -40,7 +40,7 @@ for (let i = 0; i < numberOfButtons; i++) {
 for (let i = 0; i < numberOfButtons; i++) {
   document.querySelectorAll("button")[i].addEventListener("click", function () {
     if (document.body.classList.contains("space-mode")) {
-      const sparkleSound = new Audio("./assets/space.mp3");
+      const spaceSound = new Audio("./assets/space.mp3");
       spaceSound.play();
     }
   });
