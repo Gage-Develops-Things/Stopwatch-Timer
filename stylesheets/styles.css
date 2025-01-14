@@ -168,7 +168,7 @@ body.unicorn-mode h1.spread {
 }
 
 /* Unicorn mode background */
-body.unicorn-mode.secondary-bg {
+body.unicorn-mode.bg-secondary {
   background-color: #ff99ff;
   background-image: url("../assets/fantasy-unicorn-with-digital-art-style.png");
   background-size: cover;
