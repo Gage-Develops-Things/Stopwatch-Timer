@@ -436,12 +436,12 @@ body.unicorn-mode #lapDiv {
 /* -------------------------------------------SPACE STYLES------------------------------------------- */
 @font-face {
   font-family: "spaceFont";
-  src: url("../Assets/spaceFont.ttf") format("truetype");
+  src: url("../assets/spaceFont.ttf") format("truetype");
 }
 
 /* Space mode background */
 body.space-mode {
-  background-image: url("../Assets/spacebackground.jpg");
+  background-image: url("../assets/spacebackground.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
