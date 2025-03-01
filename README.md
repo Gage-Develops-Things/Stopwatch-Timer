@@ -1,7 +1,7 @@
 # ChronoByte
 
 ## Description
-This is a web-based stopwatch and timer applications which lets users track time. The stopwatch measures elapsed time and the timer counts down from a set duration. It features a default mode, a unicorn mode, and a space mode. 
+This is a web-based stopwatch application which lets users track time. It features a default mode, a unicorn mode, and a space mode. 
 
 ## Table of Contents
 - [Installation](#installation)
